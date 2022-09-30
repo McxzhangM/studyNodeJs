@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title data-i18n="eat-kano">login</title>
+    <meta itemprop="name" content="node" />
+    <meta itemprop="description" content="node" />
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div>
+        login
+    </div>
+
+    <script>
+        fetch(
+            'http://127.0.0.1:8000/api/post/setFeat',
+            {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    feat: '666',
+                })
+            }
+        )
+            .then(response => response.json())
+            .then(data => console.log(data));
+    </script>
+</body>
+
+</html>

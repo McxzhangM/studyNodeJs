@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title data-i18n="eat-kano"></title>
+    <meta itemprop="name" content="node" />
+    <meta itemprop="description" content="node" />
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <div>
+        chi diao xiao lu nai
+    </div>
+    <!-- <script>
+        // get
+        fetch('http://127.0.0.1:8000/list?page=1&size=10')
+            .then(response => response.json())
+            .then(data => console.log(data));
+    </script> -->
+    <script>
+        fetch(
+            'http://127.0.0.1:8000/getDev',
+            {
+                method: 'POST',
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                referrerPolicy: 'no-referrer',
+                body: JSON.stringify({
+                    devId: '00397',
+                    from: 'shanghai'
+                })
+            }
+        )
+            .then(response => response.json())
+            .then(data => console.log(data));
+    </script>
+    <!-- <script>
+        // jsonp
+        function Sum(a, b) {
+            console.debug(a + b)
+            return a + b;
+        }
+    </script>
+    <script src="http://127.0.0.1:8000/sumNumber?callBack=Sum&from=html"></script> -->
+</body>
+
+</html>
